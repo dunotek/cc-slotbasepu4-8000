@@ -1,7 +1,9 @@
 cc.Class({
     extends: require('GameModeBasic'),
 
-    properties: {
+    onLoad() {
+        this.node.guiMgr = this;
+        this._super();
     },
 
 });
