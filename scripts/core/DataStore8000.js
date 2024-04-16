@@ -9,7 +9,7 @@ cc.Class({
         const { TABLE_FORMAT } = this.node.config;
         this.node.gSlotDataStore.playSession = playSession;
 
-        let { matrix, freeGameMatrix, normalGameMatrix, bonusGameMatrix, payLines } = playSession;
+        let { matrix, freeGameMatrix, normalGameMatrix, bonusGameMatrix, payLines, jackpot } = playSession;
 
         let tableFormat = TABLE_FORMAT;
         playSession = this._mapNewKeys(playSession);
@@ -32,9 +32,17 @@ cc.Class({
             }
         }
 
+        if (jackpot) playSession.jackpot = this.covertJackpot(jackpot);
         this.node.gSlotDataStore.playSession = playSession;
         cc.warn("%c data-update ", "color: red", this.node.gSlotDataStore.playSession);
         return playSession;
     },
+
+    covertJackpot(jackpot) {
+        const jpInfo = jackpot[jackpot.length - 1].split(';');
+        const jpType = jpInfo[0].split('_')[2];
+        const jpValue = Number(jpInfo[1]);
+        return { jpType, jpValue };
+    }
 
 });

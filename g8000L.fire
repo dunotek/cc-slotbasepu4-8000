@@ -1472,6 +1472,7 @@
       "__uuid__": "8e49391e-68f5-4a5b-92b8-e62a790e1f50"
     },
     "paylineSpecialSymbols": [],
+    "winLineFramePrefabName": "WinlineFrame",
     "_id": "79HTmk0OxCRLfRtXJA3yDF"
   },
   {
@@ -4438,6 +4439,7 @@
       "__uuid__": "8e49391e-68f5-4a5b-92b8-e62a790e1f50"
     },
     "paylineSpecialSymbols": [],
+    "winLineFramePrefabName": "WinlineFrame",
     "_id": "44zpnlxNtCNab28Vkofo5t"
   },
   {
@@ -24983,6 +24985,7 @@
     "_enabled": true,
     "isEnableBGM": false,
     "isEnableSFX": true,
+    "isSortingPayline": false,
     "_id": "faySf2G41JOKU+TqRA9FbD"
   },
   {
