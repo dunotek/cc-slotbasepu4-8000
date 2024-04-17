@@ -110,4 +110,21 @@ cc.Class({
             this._super(script, { name, content });
         }
     },
+
+    updateRealWallet() {
+        const wallet = this.node.mainDirector.gameStateManager.getCurrentWallet();
+        this.node.gSlotDataStore.slotBetDataStore.updateWallet(wallet);
+        this._updateWallet();
+    },
+
+    spinClick() {
+        if (!this.node || !this.node.director || !this.node.director.fsm ||
+            !this.node.director.fsm.can('actionTrigger') || !this.node.mainDirector.readyToPlay) return;
+
+        this.updateRealWallet();
+        this.skipAllEffects();
+        this.node.mainDirector.gui.emit("HIDE_INTRO");
+        this.table.emit("HIDE_ANIM_INTRO");
+        this.runAction('SpinClick');
+    },
 });
