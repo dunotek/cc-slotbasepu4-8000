@@ -4,6 +4,7 @@ cc.Class({
     extendInit() {
         this.listScriptAsync = [];
         this.guiMgr = this.node.mainDirector.guiMgr;
+        this.dataStore = this.node.gSlotDataStore;
     },
 
     switchToTrial() {
