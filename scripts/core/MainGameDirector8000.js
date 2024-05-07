@@ -43,7 +43,7 @@ cc.Class({
     },
 
     runAsyncScript() {
-        if (this.isResetAsyncScript) return;
+        if (!this.listScriptAsync.length || this.isResetAsyncScript) return;
         const command = this.listScriptAsync.shift();
         if (command) {
             const { callback, name } = command;
@@ -126,5 +126,18 @@ cc.Class({
         this.node.mainDirector.gui.emit("HIDE_INTRO");
         this.table.emit("HIDE_ANIM_INTRO");
         this.runAction('SpinClick');
+    },
+
+    storeAsyncScript(script, data) {
+        this.listScriptAsync.push(data);
+        this.executeNextScript(script);
+    },
+
+    canStoreAsyncScript() {
+        let isNormalGame = this.dataStore.currentGameMode === "normalGame";
+        const { isFinished } = this.dataStore.playSession;
+        const { isAutoSpin } = this.dataStore;
+        const isValid = isFinished === true && !isAutoSpin && isNormalGame;
+        return isValid;
     },
 });
