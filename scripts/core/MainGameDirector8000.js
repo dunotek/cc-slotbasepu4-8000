@@ -4,6 +4,7 @@ cc.Class({
     extendInit() {
         this.listScriptAsync = [];
         this.guiMgr = this.node.mainDirector.guiMgr;
+        this.dataStore = this.node.gSlotDataStore;
     },
 
     switchToTrial() {
@@ -17,7 +18,6 @@ cc.Class({
     },
 
     skipAllEffects() {
-        this.tweenDelayTimeScript && this.tweenDelayTimeScript.stop();
         this.resetAsyncScript();
         this._super();
     },
@@ -44,7 +44,7 @@ cc.Class({
     },
 
     runAsyncScript() {
-        if (this.isResetAsyncScript) return;
+        if (!this.listScriptAsync.length || this.isResetAsyncScript) return;
         const command = this.listScriptAsync.shift();
         if (command) {
             const { callback, name } = command;
@@ -112,24 +112,6 @@ cc.Class({
         }
     },
 
-    _delayTimeScript(script, time) {
-        const delayTimeScript = (isAsync = true) => {
-            this.tweenDelayTimeScript && this.tweenDelayTimeScript.stop();
-            this.tweenDelayTimeScript = cc.tween(this.node)
-                .delay(time)
-                .call(() => {
-                    this.tweenDelayTimeScript = null;
-                    isAsync ? this.runAsyncScript() : this.executeNextScript(script);
-                })
-                .start();
-        };
-        if (this.canStoreAsyncScript()) {
-            this.storeAsyncScript(script, { callback: delayTimeScript, isSkippable: true, name: '_delayTimeScript' });
-        } else {
-            delayTimeScript(false);
-        }
-    },
-
     updateRealWallet() {
         const wallet = this.node.mainDirector.gameStateManager.getCurrentWallet();
         this.node.gSlotDataStore.slotBetDataStore.updateWallet(wallet);
@@ -147,8 +129,16 @@ cc.Class({
         this.runAction('SpinClick');
     },
 
-    onDestroy() {
-        this.tweenDelayTimeScript && this.tweenDelayTimeScript.stop();
-        this.tweenDelayTimeScript = null;
-    }
+    storeAsyncScript(script, data) {
+        this.listScriptAsync.push(data);
+        this.executeNextScript(script);
+    },
+
+    canStoreAsyncScript() {
+        let isNormalGame = this.dataStore.currentGameMode === "normalGame";
+        const { isFinished } = this.dataStore.playSession;
+        const { isAutoSpin } = this.dataStore;
+        const isValid = isFinished === true && !isAutoSpin && isNormalGame;
+        return isValid;
+    },
 });
