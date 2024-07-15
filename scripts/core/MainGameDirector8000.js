@@ -17,6 +17,7 @@ cc.Class({
     },
 
     skipAllEffects() {
+        this.tweenDelayTimeScript && this.tweenDelayTimeScript.stop();
         this.resetAsyncScript();
         this._super();
     },
@@ -111,6 +112,24 @@ cc.Class({
         }
     },
 
+    _delayTimeScript(script, time) {
+        const delayTimeScript = (isAsync = true) => {
+            this.tweenDelayTimeScript && this.tweenDelayTimeScript.stop();
+            this.tweenDelayTimeScript = cc.tween(this.node)
+                .delay(time)
+                .call(() => {
+                    this.tweenDelayTimeScript = null;
+                    isAsync ? this.runAsyncScript() : this.executeNextScript(script);
+                })
+                .start();
+        };
+        if (this.canStoreAsyncScript()) {
+            this.storeAsyncScript(script, { callback: delayTimeScript, isSkippable: true, name: '_delayTimeScript' });
+        } else {
+            delayTimeScript(false);
+        }
+    },
+
     updateRealWallet() {
         const wallet = this.node.mainDirector.gameStateManager.getCurrentWallet();
         this.node.gSlotDataStore.slotBetDataStore.updateWallet(wallet);
@@ -127,4 +146,9 @@ cc.Class({
         this.table.emit("HIDE_ANIM_INTRO");
         this.runAction('SpinClick');
     },
+
+    onDestroy() {
+        this.tweenDelayTimeScript && this.tweenDelayTimeScript.stop();
+        this.tweenDelayTimeScript = null;
+    }
 });
