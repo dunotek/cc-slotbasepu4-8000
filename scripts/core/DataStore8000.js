@@ -35,8 +35,22 @@ cc.Class({
         if (jackpot) playSession.jackpot = this.covertJackpot(jackpot);
         this.node.gSlotDataStore.playSession = playSession;
         cc.warn("%c data-update ", "color: red", this.node.gSlotDataStore.playSession);
+
+        const {isRunLocal} = this.node.gSlotDataStore;
+        if (isRunLocal) {
+            cc.warn('LocalMode - skip playSession!');
+            playSession = this.getFakeData();
+        }
         return playSession;
     },
+
+    getFakeData() {
+        let fakePlaySession = {
+            matrix: '2,3,4,5,6,7,K,2,3,4,5,6,7,K,2',
+        };
+        return fakePlaySession;
+    },
+
 
     covertJackpot(jackpot) {
         const jpInfo = jackpot[jackpot.length - 1].split(';');
