@@ -146,7 +146,8 @@ cc.Class({
             ],
             SYMBOL_HAVE_ANIM: "2,5,K",
             SERVER_VERSION: 1,
-            CAN_BACK_TO_REAL_MODE: false
+            CAN_BACK_TO_REAL_MODE: false,
+            LOCAL_TEST: false,
         };
     }
 });

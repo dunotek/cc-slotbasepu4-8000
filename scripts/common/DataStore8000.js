@@ -36,8 +36,8 @@ cc.Class({
         this.node.gSlotDataStore.playSession = playSession;
         cc.warn("%c data-update ", "color: red", this.node.gSlotDataStore.playSession);
 
-        const {isRunLocal} = this.node.gSlotDataStore;
-        if (isRunLocal) {
+        const { LOCAL_TEST } = this.node.config;
+        if (LOCAL_TEST) {
             cc.warn('LocalMode - skip playSession!');
             playSession = this.getFakeData();
         }
