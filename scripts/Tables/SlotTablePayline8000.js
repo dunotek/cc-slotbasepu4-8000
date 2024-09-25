@@ -3,6 +3,7 @@ cc.Class({
 
     properties: {
         winLineFramePrefabName: 'WinlineFrame',
+        symbolSpinePrefabName: 'SlotSymbolPayline',
     },
 
     onLoad() {

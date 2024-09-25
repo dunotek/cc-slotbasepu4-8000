@@ -69,10 +69,13 @@
     "_level": 1,
     "_components": [
       {
-        "__id__": 572
+        "__id__": 573
       },
       {
-        "__id__": 573
+        "__id__": 574
+      },
+      {
+        "__id__": 575
       }
     ],
     "_prefab": null,
@@ -156,7 +159,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 360.2665679743265
+      "z": 332.55375505322445
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -213,7 +216,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "g8001",
+    "_name": "g8000",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -258,6 +261,9 @@
       },
       {
         "__id__": 571
+      },
+      {
+        "__id__": 572
       }
     ],
     "_prefab": null,
@@ -271,8 +277,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 2200,
+      "height": 1200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -305,7 +311,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "MainGamePrefab",
+    "_name": "MainGame",
     "_objFlags": 0,
     "_parent": {
       "__id__": 5
@@ -1479,6 +1485,8 @@
       "__uuid__": "d130ca10-eb67-464d-bbec-c1fc3369243a"
     },
     "paylineSpecialSymbols": [],
+    "winLineFramePrefabName": "WinlineFrame",
+    "symbolSpinePrefabName": "SlotSymbolPayline",
     "_id": "79HTmk0OxCRLfRtXJA3yDF"
   },
   {
@@ -3376,7 +3384,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "FreeGamePrefab",
+    "_name": "FreeGame",
     "_objFlags": 0,
     "_parent": {
       "__id__": 5
@@ -3422,8 +3430,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 2200,
+      "height": 1200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4464,6 +4472,8 @@
       "__uuid__": "d130ca10-eb67-464d-bbec-c1fc3369243a"
     },
     "paylineSpecialSymbols": [],
+    "winLineFramePrefabName": "WinlineFrame",
+    "symbolSpinePrefabName": "SlotSymbolPayline",
     "_id": "44zpnlxNtCNab28Vkofo5t"
   },
   {
@@ -5116,7 +5126,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "MiniGamePrefab",
+    "_name": "MiniGame",
     "_objFlags": 0,
     "_parent": {
       "__id__": 5
@@ -6008,8 +6018,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 2200,
+      "height": 1200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -8192,8 +8202,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 2200,
+      "height": 1200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -9109,8 +9119,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 2200,
+      "height": 1200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -9173,8 +9183,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 2024,
-      "height": 1200
+      "width": 2944,
+      "height": 1680
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -11107,6 +11117,10 @@
     "delayShowTime": 2,
     "hideTime": 0.5,
     "animDuration": 9,
+    "animation": null,
+    "bigWinDuration": 8,
+    "megaWinDuration": 2,
+    "superWinDuration": 2,
     "_id": "e0e/2v1WNAppFlR3Pn84Qq"
   },
   {
@@ -16804,8 +16818,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 2200,
+      "height": 1200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -18746,8 +18760,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 2200,
+      "height": 1200
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -18807,8 +18821,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 2024,
-      "height": 1200
+      "width": 2944,
+      "height": 1680
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -18912,8 +18926,8 @@
     "_active": true,
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -542,
-      "y": -209,
+      "x": -1002,
+      "y": -449,
       "z": 0
     },
     "_eulerAngles": {
@@ -19365,7 +19379,7 @@
     },
     "_enabled": true,
     "cell": {
-      "__uuid__": "4283f99b-7941-4a4a-8774-b5d17a0a5562"
+      "__uuid__": "60264551-8fb9-431e-ad1c-26f793b70843"
     },
     "_id": "2fCN2MDRVH0Lfr+bYkiudJ"
   },
@@ -22711,7 +22725,7 @@
     "_id": "efLKouR+NP45/XQCCXasMs"
   },
   {
-    "__type__": "775d70SMv1DqbD/LuvTspkz",
+    "__type__": "f8f53hTUF5LXJ/oj3/l89o1",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -22722,7 +22736,9 @@
       "__id__": 516
     },
     "mainDirector": null,
-    "_id": "41OoPuRUNDkaO34IB8YaOM"
+    "turboOn": null,
+    "turboOff": null,
+    "_id": "1a31EQYAtC/qqTJRJ4ELYT"
   },
   {
     "__type__": "3ff0dkFG+pP15VScUblncLK",
@@ -24509,7 +24525,28 @@
     "_enabled": true,
     "isEnableBGM": false,
     "isEnableSFX": true,
+    "isSortingPayline": false,
     "_id": "faySf2G41JOKU+TqRA9FbD"
+  },
+  {
+    "__type__": "cc.Mask",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 5
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_spriteFrame": null,
+    "_type": 0,
+    "_segments": 64,
+    "_N$alphaThreshold": 0,
+    "_N$inverted": false,
+    "_id": "31VNbElRtNQr+yOO8ojudL"
   },
   {
     "__type__": "cc.Canvas",
@@ -24539,7 +24576,7 @@
     "autoOrientation": false,
     "isPortrait": false,
     "canvas": {
-      "__id__": 572
+      "__id__": 573
     },
     "fitByOrientation": true,
     "useCustomDesignResolution": false,
@@ -24548,5 +24585,16 @@
     "widgetNodes": [],
     "isDebug": false,
     "_id": "edEzEifuNLrJvbFrXAgDA3"
+  },
+  {
+    "__type__": "128b3DV9GxNDKEYlYkc/FY8",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "position": "TOP_RIGHT",
+    "_id": "21PGoNQUtKnocyRg5e+H7a"
   }
 ]
