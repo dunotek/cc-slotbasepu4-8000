@@ -276,7 +276,7 @@
     "_id": "7fDyHjV59JOr12zcqZy6Ud"
   },
   {
-    "__type__": "67baa6aG6hFhIaXqsxP/1n9",
+    "__type__": "11d14hyuaVHzo4brZGWTxOs",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -286,7 +286,7 @@
     "_id": "ef8z128ENLp49rtnQj4Hn6"
   },
   {
-    "__type__": "859e397ZUhCxKQd9HOqIl0a",
+    "__type__": "267a9kccxtFsru9PMS859/s",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -306,7 +306,7 @@
     },
     "_enabled": true,
     "betHistoryPrefab": {
-      "__uuid__": "c86c81c8-093d-467c-984c-9e7b6abf2a27"
+      "__uuid__": "33fd7458-2e22-4d65-8064-49b9820c245e"
     },
     "_id": "59b++FtXFCp6qlqQrIzeyI"
   },
